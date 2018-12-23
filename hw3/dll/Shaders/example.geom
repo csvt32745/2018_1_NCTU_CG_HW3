@@ -49,14 +49,11 @@ void main()
 	{
 		gl_Position = gl_in[i].gl_Position;
 		frag_texcoord = geom_texcoord[i];
-		
-		// apply TBN
-		
-
 		frag_n = geom_n[i];
 		frag_pos = geom_pos[i];
 		frag_lightPos = geom_lightPos[i];
 		frag_camPos = geom_camPos[i];
+
 		if(tex_enb.is_normalMap){
 			mat3 TBN = mat3(
 				normalize(TB[0]),
@@ -64,6 +61,7 @@ void main()
 				normalize(geom_n[i]));
 			frag_TBN = TBN;
 		}
+
 		EmitVertex();
 	}
 	EndPrimitive();
