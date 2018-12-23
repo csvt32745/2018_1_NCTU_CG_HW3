@@ -27,10 +27,6 @@ uniform TextureEnable tex_enb;
 
 void main()
 {
-	//vec3 edge1 = gl_in[2].gl_Position - gl_in[1].gl_Position;
-	//vec3 edge2 = gl_in[3].gl_Position - gl_in[1].gl_Position;
-	//vec2 dUV1 = geom_texcoord[2] - geom_texcoord[1];
-	//vec2 dUV2 = geom_texcoord[3] - geom_texcoord[1];
 	mat2x3 TB;
 	if(tex_enb.is_normalMap){
 		mat2 dUV = mat2( 
@@ -38,8 +34,8 @@ void main()
 				geom_texcoord[2] - geom_texcoord[0] 
 			);
 		mat2x3 E = mat2x3(
-				gl_in[1].gl_Position - gl_in[0].gl_Position,
-				gl_in[2].gl_Position - gl_in[0].gl_Position
+				geom_n[1] - geom_n[0],
+				geom_n[2] - geom_n[0]
 			);
 		/*
 		*	T(E) = T(dUV) o TB
