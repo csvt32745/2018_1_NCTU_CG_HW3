@@ -482,6 +482,9 @@ void mouse(int button, int state, int x, int y) {
 		if (cam_rad <= fzero)
 			cam_rad = 0.1f;
 	}
+	cam_pos.x = cam_rad * cos(cam_deg);
+	cam_pos.z = cam_rad * sin(cam_deg);
+	earth->updateCamPos(cam_pos.getArr());
 }
 
 void idle() {
