@@ -34,8 +34,8 @@ void main()
 				geom_texcoord[2] - geom_texcoord[0] 
 			);
 		mat2x3 E = mat2x3(
-				geom_n[1] - geom_n[0],
-				geom_n[2] - geom_n[0]
+				geom_pos[1] - geom_pos[0],
+				geom_pos[2] - geom_pos[0]
 			);
 		/*
 		*	T(E) = T(dUV) o TB
