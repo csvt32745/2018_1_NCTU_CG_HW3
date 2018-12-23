@@ -65,7 +65,7 @@ void main()
 			mat3 TBN = mat3(
 				normalize(TB[0]),
 				normalize(TB[1]), 
-				normalize(geom_n[0]));
+				normalize(geom_n[i]));
 			frag_TBN = TBN;
 		}
 		EmitVertex();
