@@ -56,9 +56,9 @@ void main()
 
 		if(tex_enb.is_normalMap){
 			mat3 TBN = mat3(
-				normalize(TB[0]),
-				normalize(TB[1]), 
-				normalize(geom_n[i]));
+				(TB[0]),
+				(cross(geom_n[i], TB[0])), 
+				(geom_n[i]));
 			frag_TBN = TBN;
 		}
 

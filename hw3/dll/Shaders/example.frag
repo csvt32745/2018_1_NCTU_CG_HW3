@@ -59,15 +59,15 @@ void main(){
 	// specular
 	vec3 viewDir = normalize(frag_camPos - frag_pos);
 	vec3 reflectDir = reflect(-lightDir, n);
-	float spc = pow(max(dot(viewDir, reflectDir), 0.0), 16);
+	float spc = pow(max(dot(viewDir, reflectDir), 0.0), 32);
 	vec3 specular = spc * phong_shading.spc_coe * vec3(phong_shading.spc_color);
 	if(tex_enb.is_specularMap)
 		specular *= vec3(texture2D(SpecularMap, frag_texcoord));
 
 	// result
 	vec3 res = (diffuse + ambient + specular);
-	if(tex_enb.is_textureMap)
-		res *=  vec3(texture2D(TextureMap, frag_texcoord));
+	//if(tex_enb.is_textureMap)
+	//	res *=  vec3(texture2D(TextureMap, frag_texcoord));
 	
 	outColor = vec4(res, 1.0);
 	//outColor = texture2D(Texture, frag_texcoord);
