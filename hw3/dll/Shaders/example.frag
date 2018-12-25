@@ -59,7 +59,7 @@ void main(){
 	// specular
 	vec3 viewDir = normalize(frag_camPos - frag_pos);
 	vec3 reflectDir = reflect(-lightDir, n);
-	float spc = pow(max(dot(viewDir, reflectDir), 0.0), 32);
+	float spc = pow(max(dot(viewDir, reflectDir), 0.0), 8);
 	vec3 specular = spc * phong_shading.spc_coe * vec3(phong_shading.spc_color);
 	if(tex_enb.is_specularMap)
 		specular *= vec3(texture2D(SpecularMap, frag_texcoord));

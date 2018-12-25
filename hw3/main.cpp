@@ -74,7 +74,7 @@ struct PhongShading
 	GLfloat spc_color[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	GLfloat amb_coe = 0.15f;
 	GLfloat dif_coe = 1.0f;
-	GLfloat spc_coe = 0.8f;
+	GLfloat spc_coe = 0.3f;
 };
 
 struct TextureEnable
