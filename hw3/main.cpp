@@ -72,7 +72,7 @@ struct PhongShading
 	GLfloat amb_color[4] = { 0.6f, 0.7f, 0.5f, 1.0f };
 	GLfloat dif_color[4] = { 0.35f, 0.3f, 0.3f, 1.0f };
 	GLfloat spc_color[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
-	GLfloat amb_coe = 0.3f;
+	GLfloat amb_coe = 0.15f;
 	GLfloat dif_coe = 1.0f;
 	GLfloat spc_coe = 0.8f;
 };
@@ -234,7 +234,7 @@ float cam_delta_deg = pi / (float)18;	// 10 deg
 float cam_move_speed = 1.0f;
 
 int time_start = 0, time_end = 0, time_delta = 0;
-float X = 0.1f; // related to degree
+float X = 0.01f; // related to degree
 Planet *earth = NULL;
 bool is_pause = false, is_axises = false;
 
